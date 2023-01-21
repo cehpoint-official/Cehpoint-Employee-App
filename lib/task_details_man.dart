@@ -1,13 +1,14 @@
+import 'package:cehpoint/tdm_1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(const task_details());
+  runApp(const task_details_man());
 }
 
-class task_details extends StatelessWidget {
-  const task_details({super.key});
+class task_details_man extends StatelessWidget {
+  const task_details_man({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class task_details extends StatelessWidget {
               Theme.of(context).textTheme,
             ),
           ),
-          home: const Task_details(),
+          home: const Task_details_man(),
           debugShowCheckedModeBanner: false,
         );
       }),
@@ -27,8 +28,8 @@ class task_details extends StatelessWidget {
   }
 }
 
-class Task_details extends StatelessWidget {
-  const Task_details({super.key});
+class Task_details_man extends StatelessWidget {
+  const Task_details_man({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -262,6 +263,34 @@ class Task_details extends StatelessWidget {
               )
             ],
           ),
+          SizedBox(
+            height: 120.h,
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const tdm_1()),
+              );
+            },
+            child: Container(
+              width: 317.w,
+              height: 45.h,
+              decoration: BoxDecoration(
+                  boxShadow: [BoxShadow(blurRadius: 10.r, color: Colors.grey)],
+                  color: Color(hexColor('#D4C00B')),
+                  borderRadius: BorderRadius.circular(25.r)),
+              child: Column(
+                children: [
+                  SizedBox(height: 10.h),
+                  Text(
+                    'Mark as completed',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white, fontSize: 20.sp),
+                  ),
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );

@@ -1,6 +1,6 @@
+import 'package:cehpoint/start.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:cehpoint/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,12 +13,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          textTheme: GoogleFonts.poppinsTextTheme(
+          textTheme: GoogleFonts.interTextTheme(
         Theme.of(context).textTheme,
       )),
       color: Colors.white,
       debugShowCheckedModeBanner: false,
-      home: const home(),
+      home: const start(),
     );
   }
 }

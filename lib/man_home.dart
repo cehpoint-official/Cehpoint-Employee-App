@@ -1,14 +1,14 @@
-import 'package:cehpoint/add_task.dart';
+import 'package:cehpoint/task_details_man.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(const emp_1());
+  runApp(const man_home());
 }
 
-class emp_1 extends StatelessWidget {
-  const emp_1({super.key});
+class man_home extends StatelessWidget {
+  const man_home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class emp_1 extends StatelessWidget {
               Theme.of(context).textTheme,
             ),
           ),
-          home: const Emp_1(),
+          home: const Man_home(),
           debugShowCheckedModeBanner: false,
         );
       }),
@@ -28,129 +28,43 @@ class emp_1 extends StatelessWidget {
   }
 }
 
-class Emp_1 extends StatelessWidget {
-  const Emp_1({super.key});
+class Man_home extends StatelessWidget {
+  const Man_home({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: Colors.white,
-        title: const Text(
-          'EMPLOYEE 1',
-          style: TextStyle(color: Colors.black),
-        ),
-        actions: [
-          const Icon(
-            Icons.phone,
-            color: Colors.blue,
-          ),
-          SizedBox(
-            width: 20.w,
-          ),
-          const Icon(
-            Icons.chat,
-            color: Colors.black,
-          ),
-          SizedBox(
-            width: 20.w,
-          ),
-        ],
-      ),
       body: Column(
         children: [
           SizedBox(
-            height: 20.h,
+            height: 40.h,
           ),
           Row(
             children: [
               SizedBox(
                 width: 20.w,
               ),
-              Image.asset(
-                'assets/employee.png',
-                height: 20.h,
-                width: 20.w,
-              ),
+              Image.asset('assets/logo.png'),
               SizedBox(
-                width: 20.w,
+                width: 170.w,
               ),
-              Text(
-                'Employee 1',
-                style: TextStyle(color: Colors.black, fontSize: 20.sp),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 20.h,
-          ),
-          Row(
-            children: [
+              const Icon(Icons.phone),
               SizedBox(
-                width: 20.w,
+                width: 15.w,
               ),
-              const Icon(
-                Icons.phone,
-                color: Color.fromARGB(255, 141, 140, 140),
-              ),
-              SizedBox(
-                width: 10.w,
-              ),
-              Text(
-                '+91 7039494588',
-                style: TextStyle(color: Colors.black, fontSize: 20.sp),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 20.h,
-          ),
-          Row(
-            children: [
-              SizedBox(
-                width: 20.w,
-              ),
-              const Icon(
-                Icons.mail_outline,
-                color: Color.fromARGB(255, 141, 140, 140),
+              GestureDetector(
+                onTap: () {},
+                child: Image.asset('assets/chat.png'),
               ),
               SizedBox(
                 width: 15.w,
               ),
-              Text(
-                'employ@gomcmail.',
-                style: TextStyle(color: Colors.black, fontSize: 20.sp),
-              ),
+              GestureDetector(onTap: () {}, child: const Icon(Icons.more_vert)),
             ],
           ),
           SizedBox(
             height: 30.h,
-          ),
-          Container(
-            width: 317.w,
-            height: 45.h,
-            decoration: BoxDecoration(
-                color: Color(hexColor('#D4C00B')),
-                borderRadius: BorderRadius.circular(12.r)),
-            child: Column(
-              children: [
-                SizedBox(height: 10.h),
-                Text(
-                  '+ADD TASK',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white, fontSize: 20.sp),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 10.h,
-          ),
-          const Divider(),
-          SizedBox(
-            height: 10.h,
           ),
           Row(
             children: [
@@ -167,7 +81,7 @@ class Emp_1 extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 10.h,
+            height: 20.h,
           ),
           Container(
             width: 317.w,
@@ -180,18 +94,29 @@ class Emp_1 extends StatelessWidget {
                 SizedBox(height: 10.h),
                 Row(
                   children: [
+                    SizedBox(
+                      width: 10.w,
+                    ),
+                    const Icon(
+                      Icons.verified,
+                      size: 20,
+                      color: Colors.green,
+                    ),
+                    SizedBox(
+                      width: 10.w,
+                    ),
                     Text(
-                      '     TASK-1',
+                      'TASK-1',
                       style: TextStyle(color: Colors.white, fontSize: 18.sp),
                     ),
                     SizedBox(
-                      width: 210.w,
+                      width: 190.w,
                     ),
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                              builder: (context) => const add_task()),
+                              builder: (context) => const task_details_man()),
                         );
                       },
                       child: const Icon(
@@ -219,12 +144,23 @@ class Emp_1 extends StatelessWidget {
                 SizedBox(height: 10.h),
                 Row(
                   children: [
+                    SizedBox(
+                      width: 10.w,
+                    ),
+                    const Icon(
+                      Icons.verified,
+                      size: 20,
+                      color: Colors.green,
+                    ),
+                    SizedBox(
+                      width: 10.w,
+                    ),
                     Text(
-                      '     TASK-2',
+                      'TASK-2',
                       style: TextStyle(color: Colors.white, fontSize: 18.sp),
                     ),
                     SizedBox(
-                      width: 210.w,
+                      width: 190.w,
                     ),
                     const Icon(
                       Icons.arrow_forward_ios,
@@ -250,12 +186,23 @@ class Emp_1 extends StatelessWidget {
                 SizedBox(height: 10.h),
                 Row(
                   children: [
+                    SizedBox(
+                      width: 10.w,
+                    ),
+                    const Icon(
+                      Icons.verified,
+                      size: 20,
+                      color: Colors.green,
+                    ),
+                    SizedBox(
+                      width: 10.w,
+                    ),
                     Text(
-                      '     TASK-3',
+                      'TASK-3',
                       style: TextStyle(color: Colors.white, fontSize: 18.sp),
                     ),
                     SizedBox(
-                      width: 210.w,
+                      width: 190.w,
                     ),
                     const Icon(
                       Icons.arrow_forward_ios,
@@ -281,12 +228,15 @@ class Emp_1 extends StatelessWidget {
                 SizedBox(height: 10.h),
                 Row(
                   children: [
+                    SizedBox(
+                      width: 40.w,
+                    ),
                     Text(
-                      '     TASK-4',
+                      'TASK-4',
                       style: TextStyle(color: Colors.white, fontSize: 18.sp),
                     ),
                     SizedBox(
-                      width: 210.w,
+                      width: 190.w,
                     ),
                     const Icon(
                       Icons.arrow_forward_ios,
@@ -312,12 +262,15 @@ class Emp_1 extends StatelessWidget {
                 SizedBox(height: 10.h),
                 Row(
                   children: [
+                    SizedBox(
+                      width: 40.w,
+                    ),
                     Text(
-                      '     TASK-5',
+                      'TASK-5',
                       style: TextStyle(color: Colors.white, fontSize: 18.sp),
                     ),
                     SizedBox(
-                      width: 210.w,
+                      width: 190.w,
                     ),
                     const Icon(
                       Icons.arrow_forward_ios,
@@ -343,12 +296,15 @@ class Emp_1 extends StatelessWidget {
                 SizedBox(height: 10.h),
                 Row(
                   children: [
+                    SizedBox(
+                      width: 40.w,
+                    ),
                     Text(
-                      '     TASK-6',
+                      'TASK-6',
                       style: TextStyle(color: Colors.white, fontSize: 18.sp),
                     ),
                     SizedBox(
-                      width: 210.w,
+                      width: 190.w,
                     ),
                     const Icon(
                       Icons.arrow_forward_ios,

@@ -1,4 +1,5 @@
 import 'package:cehpoint/add_emp.dart';
+import 'package:cehpoint/chat.dart';
 import 'package:cehpoint/emp_1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +18,7 @@ class home extends StatelessWidget {
       builder: ((context, child) {
         return MaterialApp(
           theme: ThemeData(
-            textTheme: GoogleFonts.poppinsTextTheme(
+            textTheme: GoogleFonts.interTextTheme(
               Theme.of(context).textTheme,
             ),
           ),
@@ -74,7 +75,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                 width: 26.w,
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const chat()),
+                  );
+                },
                 child: Image.asset('assets/chat.png'),
               ),
               SizedBox(
@@ -101,7 +106,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                   width: 317.w,
                   height: 45.h,
                   decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 218, 202, 55),
+                      color: Color(hexColor('#D4C00B')),
                       borderRadius: BorderRadius.circular(12.r)),
                   child: Column(
                     children: [
@@ -496,4 +501,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
       ),
     );
   }
+}
+
+int hexColor(String c) {
+  String sColor = '0xff$c';
+  sColor = sColor.replaceAll('#', '');
+  int dColor = int.parse(sColor);
+  return dColor;
 }

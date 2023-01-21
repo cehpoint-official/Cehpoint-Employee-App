@@ -15,7 +15,7 @@ class add_emp extends StatelessWidget {
       builder: ((context, child) {
         return MaterialApp(
           theme: ThemeData(
-            textTheme: GoogleFonts.poppinsTextTheme(
+            textTheme: GoogleFonts.interTextTheme(
               Theme.of(context).textTheme,
             ),
           ),
@@ -60,8 +60,7 @@ class Add_emp extends StatelessWidget {
               Text(
                 'Employee Details',
                 style: TextStyle(
-                    color: const Color.fromARGB(255, 226, 209, 53),
-                    fontSize: 18.sp),
+                    color: Color(hexColor('#D4C00B')), fontSize: 18.sp),
               ),
             ],
           ),
@@ -194,7 +193,7 @@ class Add_emp extends StatelessWidget {
             width: 317.w,
             height: 45.h,
             decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 218, 202, 55),
+                color: Color(hexColor('#D4C00B')),
                 borderRadius: BorderRadius.circular(12.r)),
             child: Column(
               children: [
@@ -211,4 +210,11 @@ class Add_emp extends StatelessWidget {
       ),
     );
   }
+}
+
+int hexColor(String c) {
+  String sColor = '0xff$c';
+  sColor = sColor.replaceAll('#', '');
+  int dColor = int.parse(sColor);
+  return dColor;
 }
